@@ -1,0 +1,15 @@
+name: 'Kolga Build'
+description: 'This action is used to execute Kolga build step'
+inputs:
+  disable_cache:
+    description: 'Disable buildx cache'
+    required: false
+    default: true
+runs:
+  using: 'docker'
+  image: 'docker.anders.fi/anders/ci-configuration:dev-buildkit-upgrade-production'
+  entrypoint: /app/devops
+  args:
+    - create_images
+  env:
+    BUILDKIT_CACHE_DISABLE: ${{ inputs.disable_cache }}
