@@ -4,7 +4,7 @@ inputs:
   disable_cache:
     description: 'Disable buildx cache'
     required: false
-    default: true
+    default: false
 runs:
   using: 'docker'
   image: 'docker://ghcr.io/andersinno/kolga:v3'
